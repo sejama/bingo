@@ -1,0 +1,24 @@
+# Entorno virtual
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Build
+build/
+dist/
+*.spec
+
+# Archivos generados
+*.pdf
+
+# Base de datos
+*.db
+
+# Config local
+.env
+
+# OS
+.DS_Store
+Thumbs.db
