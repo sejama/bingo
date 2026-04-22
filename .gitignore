@@ -15,6 +15,7 @@ dist/
 
 # Base de datos
 *.db
+*.sqlite3
 
 # Config local
 .env
