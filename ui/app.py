@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import messagebox
+from tkinter import filedialog
 
 from services.generador_cartones import (
     generar_cartones,
@@ -360,7 +361,27 @@ class BingoApp:
             messagebox.showwarning("Error", "Primero generá cartones")
             return
 
-        archivo = exportar_cartones_pdf(self.cartones_generados, partida_id=self.partida_id)
+        nombre_sugerido = (
+            f"cartones_partida_{self.partida_id}.pdf"
+            if self.partida_id is not None
+            else "cartones.pdf"
+        )
+
+        ruta_destino = filedialog.asksaveasfilename(
+            title="Guardar cartones PDF",
+            defaultextension=".pdf",
+            initialfile=nombre_sugerido,
+            filetypes=[("PDF", "*.pdf")],
+        )
+
+        if not ruta_destino:
+            return
+
+        archivo = exportar_cartones_pdf(
+            self.cartones_generados,
+            archivo=ruta_destino,
+            partida_id=self.partida_id,
+        )
         messagebox.showinfo("OK", f"PDF generado correctamente\nArchivo: {archivo}")
 
     def cargar_lista_partidas(self):
