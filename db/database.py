@@ -1,12 +1,20 @@
 import json
+import os
 import sqlite3
+import sys
 from datetime import datetime
 from pathlib import Path
 
 from models.carton import Carton
 
 
-DB_PATH = Path(__file__).resolve().parent / "bingo.sqlite3"
+if getattr(sys, "frozen", False):
+    # Ejecutable empaquetado: guardar DB en AppData para que sea escribible
+    _app_data = Path(os.environ.get("APPDATA", Path.home())) / "BingoEscolar"
+    _app_data.mkdir(parents=True, exist_ok=True)
+    DB_PATH = _app_data / "bingo.sqlite3"
+else:
+    DB_PATH = Path(__file__).resolve().parent / "bingo.sqlite3"
 
 
 def get_connection():
