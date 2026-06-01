@@ -4,7 +4,7 @@ import os
 import platform
 import sys
 import uuid
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
 
 import requests
