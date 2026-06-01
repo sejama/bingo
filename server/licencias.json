@@ -1,0 +1,4 @@
+{
+  "BINGO-0001-DEMO": { "activa": true,  "cliente": "Escuela de ejemplo" },
+  "BINGO-0002-XXXX": { "activa": false, "cliente": "Licencia desactivada" }
+}
