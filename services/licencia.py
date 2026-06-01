@@ -10,7 +10,7 @@ from pathlib import Path
 import requests
 
 # --- Configuración ---
-URL_VALIDACION = "https://tu-servidor.com/api/validar"  # <-- cambiá esta URL
+URL_VALIDACION = "https://tu-servidor.com/validar.php"  # <-- cambiá esta URL
 DIAS_GRACIA = 7
 TIMEOUT_SEGUNDOS = 5
 # ---------------------
